@@ -12,7 +12,7 @@ const Navigation = () => {
                         <img alt="Logo" src={portlogo} width="100" height="85" className="d-inline-block align-top"/>
                     </Navbar.Brand>
                     <Nav className="ms-auto">
-                        <Nav.Link className="me-4" as={Link} to="/Home">Home</Nav.Link>
+                        <Nav.Link className="me-4" as={Link} to="/">Home</Nav.Link>
                         <Nav.Link className="me-4" as={Link} to="/About">About</Nav.Link>
                         <Nav.Link className="me-4" as={Link} to="/Contact">Contact</Nav.Link>
                         <Nav.Link as={Link} to="/Login">Login</Nav.Link>

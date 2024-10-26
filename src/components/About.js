@@ -1,5 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Navigation from '../components/Navbar.js';
 
-const About = () => <h1>About Page</h1>;
+const About = () => {
+    useEffect(() => {
+        document.title = 'About'; // Set the document title
+    }, []);
+    return (
+        <div>
+            <Navigation />
+        </div>
+    );
+};
 
 export default About;

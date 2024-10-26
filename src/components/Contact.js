@@ -1,5 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Navigation from '../components/Navbar.js';
 
-const Contact = () => <h1>Contact Page</h1>;
+const Contact = () => {
+    useEffect(() => {
+        document.title = 'Contact'; // Set the document title
+    }, []);
+    return (
+        <div>
+            <Navigation />
+        </div>
+    );
+};
 
 export default Contact;

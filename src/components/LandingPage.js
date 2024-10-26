@@ -3,7 +3,7 @@ import Navigation from '../components/Navbar.js';
 
 const LandingPage = () => {
         useEffect(() => {
-            document.title = 'Landing Page'; // Set the document title
+            document.title = 'Home'; // Set the document title
         }, []);
         return (
             <div>

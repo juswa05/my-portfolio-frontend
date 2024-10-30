@@ -21,6 +21,11 @@ const Register = () => {
         },
         validationSchema: userRegistrationValidation,
         onSubmit: async (values, { setSubmitting }) => {
+            if (values.honeypot) {
+                // If honeypot field has a value, stop submission (likely a bot)
+                console.warn("Honeypot detected. Submission blocked.");
+                return;
+            }
             try {
                 const userData = await registerUser(values);
                 console.log('User registered:', userData);
@@ -38,6 +43,15 @@ const Register = () => {
             <div className="wrapper">
                 <form onSubmit={formik.handleSubmit} id="registerForm">
                     <h2>Register</h2>
+                    {/* Honeypot field (hidden from users) */}
+                    <input
+                        type="text"
+                        name="honeypot"
+                        style={{ display: 'none' }}
+                        {...formik.getFieldProps('honeypot')}
+                        tabIndex="-1"
+                        autoComplete="off"
+                    />
                     <div className="input-field-group">
                         <div className="input-field">
                             <input type="text" id="username" name="username" {...formik.getFieldProps('username')} aria-describedby="usernameError"/>
